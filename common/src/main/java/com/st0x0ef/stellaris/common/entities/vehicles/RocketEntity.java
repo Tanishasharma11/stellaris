@@ -240,8 +240,7 @@ public class RocketEntity extends IVehicleEntity implements HasCustomInventorySc
                 else {
                     ItemStack heldItem = player.getItemInHand(hand);
                     boolean isBucketFuel = heldItem.is(TagRegistry.FUEL)
-                        || heldItem.is(ItemsRegistry.DIESEL_BUCKET.get())
-                        || heldItem.is(ItemsRegistry.HYDROGEN_BUCKET.get());
+                    boolean isBucketFuel = heldItem.is(TagRegistry.BUCKET_FUELS);
                         heldItem.shrink(1);
                     if (isBucketFuel) {
                         player.getInventory().add(new ItemStack(Items.BUCKET));
